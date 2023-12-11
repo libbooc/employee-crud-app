@@ -66,3 +66,4 @@ npm run test
 ```
 
 #### Feel free to explore and enhance the application further. Thank you!
+##### Authors: Laarni Booc, Ashley Lim, & Kristine Gallawan
