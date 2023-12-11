@@ -1,28 +1,21 @@
+'use client'
 import React from "react";
 import EditEmployee from "./EditEmployee";
 import DeleteEmployee from "./DeleteEmployee";
 import ViewEmployee from "./ViewEmployee";
+import TableHeader from "./TableHeader";
 
 interface EmployeeListProps {
-  data: any[]; // Replace 'any' with the actual type of your data
+  data: any[]; 
 }
 
 const EmployeeList: React.FC<EmployeeListProps> = ({ data }) => {
+
+  const tableHeaders = ['First Name', 'Last Name', 'Job', 'Email', 'Actions', ''];
   return (
     <div className="overflow-x-auto">
       <table className="table table-zebra">
-        {/* head */}
-        <thead>
-          <tr>
-            <th></th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Job</th>
-            <th>Email</th>
-            <th>Actions</th>
-            <th></th>
-          </tr>
-        </thead>
+        <TableHeader headers={tableHeaders} />
         <tbody>
           {data.map((item) => (
             <tr key={item?.id}>

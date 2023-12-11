@@ -1,61 +1,33 @@
 'use client'
-import React from "react";
-import { useState } from "react";
-import { GrView } from "react-icons/gr";
-import Modal from "./Modal";
+
+import React from 'react';
+import { GrView } from 'react-icons/gr';
+import Button from './Button';
 
 interface ViewEmployeeProps {
-    employeeId: string;
-    initialData: {
-      firstName: string;
-      lastName: string;
-      job: string;
-      email: string;
-    };
-  }
-  
-  const ViewEmployee: React.FC<ViewEmployeeProps> = ({ employeeId, initialData }) => {
-    const [modalOpen, setModalOpen] = useState(false);
+  employeeId: string;
+  initialData: {
+    firstName: string;
+    lastName: string;
+    job: string;
+    email: string;
+  };
+}
 
-    return (
+const ViewEmployee: React.FC<ViewEmployeeProps> = ({ employeeId, initialData }) => {
 
-        <div>
-            <button onClick={() => setModalOpen(true)} className="btn btn-sm btn-outline"> View <GrView size={14}/></button>
-            <Modal modalOpen={modalOpen} setModalOpen={setModalOpen}> 
-            <form className="max-w-md mx-auto">
-                <h3 className="font-bold text-lg">View Employee Details</h3>
+  const handleViewClick = () => {
+    window.location.href = `/employees/${employeeId}?firstName=${initialData.firstName}&lastName=${initialData.lastName}&job=${initialData.job}&email=${initialData.email}`;
+  };
 
-                <div className="label mt-4">
-                    <span className="label-text">First Name</span>
-                </div>
-                <label className="form-control">
-                    <input name="firstName" id="firstName" type="text" placeholder="Type here" defaultValue={initialData.firstName} className="cursor-not-allowed input input-bordered input-primary w-full " readOnly />
-                </label>
-
-                <div className="label mt-4">
-                    <span className="label-text">Last Name</span>
-                </div>
-                <label className="form-control">
-                    <input name="lastName" id="lastName" type="text" placeholder="Type here" defaultValue={initialData.lastName} className="cursor-not-allowed input input-bordered input-primary w-full " readOnly />
-                </label>
-
-                <div className="label mt-4">
-                    <span className="label-text">Job</span>
-                </div>
-                <label className="form-control">
-                    <input name="job" id="job" type="text" placeholder="Type here" defaultValue={initialData.job} className="cursor-not-allowed input input-bordered input-primary w-full" readOnly />
-                </label>
-
-                <div className="label mt-4">
-                    <span className="label-text">Email</span>
-                </div>
-                <label className="form-control">
-                    <input name="email" id="email" type="text" placeholder="Type here" defaultValue={initialData.email} className="cursor-not-allowed input input-bordered input-primary w-full " readOnly />
-                </label>
-                </form>
-            </Modal>
-        </div>
-    )
+  return (
+    <div>
+      <Button onClick={handleViewClick} className="btn btn-sm btn-outline">
+        View <GrView size={14} />
+      </Button>
+    </div>
+  );
 };
 
 export default ViewEmployee;
+

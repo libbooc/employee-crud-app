@@ -1,5 +1,5 @@
 import AddEmployee from './components/AddEmployee'
-import { prisma } from '@/lib/prisma'
+import { prisma } from '../app/lib/prisma'
 import EmployeeList from './components/EmployeeList';
 
 
