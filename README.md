@@ -54,10 +54,10 @@ The application should now be running at http://localhost:3000.
 The main page is located in `app/page.tsx`. It includes components for adding employees (AddEmployee) and displaying the employee list (EmployeeList).
 
 ### Prisma Configuration
-The Prisma configuration is defined in the lib/prisma.ts file. It exports a Prisma client instance (prisma) and ensures that the client is a singleton to optimize performance.
+The Prisma configuration is defined in the `lib/prisma.ts` file. It exports a Prisma client instance (prisma) and ensures that the client is a singleton to optimize performance.
 
 ### Environment Variables
-The database URL is specified in the .env file. Make sure to update this file if you change the database configuration.
+The database URL is specified in the `.env` file. Make sure to update this file if you change the database configuration.
 
 ### Tests
 Test files are located in the app/test folder. To run tests:
