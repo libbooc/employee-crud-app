@@ -60,7 +60,7 @@ The Prisma configuration is defined in the `lib/prisma.ts` file. It exports a Pr
 The database URL is specified in the `.env` file. Make sure to update this file if you change the database configuration.
 
 ### Tests
-Test files are located in the app/test folder. To run tests:
+Test files are located in the `app/tests` folder. To run tests:
 ```bash
 npm run test
 ```
